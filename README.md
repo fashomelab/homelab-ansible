@@ -57,7 +57,7 @@ The CI pipeline (`.github/workflows/ansible-homelab-ci.yaml`) runs on pushes to 
 
 <div align="center">
   <img src="images/management-workflow-vault-oidc.png" alt="Secretless Authentication Using OIDC and HashiCorp Vault" width="600">
-  <p><em>Secretless Authentication Using OIDC and HashiCorp Vault (image to be updated).</em></p>
+  <p><em>Secretless Authentication Using OIDC and HashiCorp Vault.</em></p>
 </div>
 
 ---
@@ -75,7 +75,7 @@ The CI pipeline (`.github/workflows/ansible-homelab-ci.yaml`) runs on pushes to 
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/fashomelab/homelab-ansible.git](https://github.com/fashomelab/homelab-ansible.git)
+    git clone https://github.com/fashomelab/homelab-ansible.git
     cd ansible
     ```
     * Note: Fork and customize vars (e.g., inventory/fashomelab/group_vars/) before running, as this is tailored to my setup.
@@ -139,13 +139,14 @@ ansible-playbook playbooks/site.yml -i inventory/fashomelab/
 ansible-playbook playbooks/site.yml -i inventory/fashomelab/ --tags nginx_configure
 ```
 
-**Note:** Azure deployment (`deploy-interview-app.yml`) is a work in progress. Example vars:
+**Note**: The Azure deployment (`deploy-interview-app.yml`) is experimental and under active development. Use with caution and provide feedback via [issues](https://github.com/fashomelab/homelab-ansible/issues).
+
 ```bash
 ansible-playbook playbooks/deploy-interview-app.yml -i inventory/azhomelab-prod/ --extra-vars "acr_name=myacr.azurecr.io acr_user=myuser acr_pass=mypass image_repo=interview-app image_tag=latest app_name=interview-app"
 ```
 ---
 
-## Roles
+## 🛠️ Roles
 
 Modular roles power the playbook, each with its own `README.md` for details.
 
