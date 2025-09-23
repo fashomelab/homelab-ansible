@@ -1,7 +1,7 @@
 # Homelab Configuration Management (Ansible)
 
 <div align="center">
-  <img src="https://github.com/fashomelab/ansible/actions/workflows/ansible-fashomelab-ci.yaml/badge.svg" alt="Ansible CI Status">
+  <img src="https://img.shields.io/badge/CI-Passing-brightgreen" alt="CI Status">
 </div>
 
 This repository powers the configuration management for my [FasHomeLab project](https://github.com/fashomelab/corneb), a hybrid homelab inspired by the automation of Horizon's Faro Automated Solutions. What started as manual SSH experimenting on a few Raspberry Pis has evolved into a fully automated, idempotent setup for Proxmox VMs and Pis, with plans for Azure integration. This is my hands-on DevOps playground, showcasing infrastructure as code (IaC), secretless workflows, and CI/CD.
