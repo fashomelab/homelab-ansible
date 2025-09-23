@@ -12,6 +12,11 @@ This repository powers the configuration management for my [FasHomeLab project](
 
 I built this to tame the chaos of managing my homelab's servers—Raspberry Pis, Proxmox VMs, and soon Azure resources. Initially, I spent hours SSH-ing into each device, but now Ansible automates everything from OS updates to monitoring stacks, cutting deployment time by ~80%. This repo is a core piece of my [FasHomeLab portfolio](https://github.com/fashomelab/corneb), demonstrating real-world skills in configuration management, security, and automation. It's battle-tested for my setup but designed to be reusable—fork it, tweak the vars, and make it yours!
 
+### Key Results
+- Reduced deployment time by ~80%.
+- Managed configuration for 10+ VMs and Raspberry Pis.
+- Implemented secretless CI/CD with Vault.
+
 ## 🚀 Key Features
 
 - **Hybrid Infrastructure**: Configures on-premise Proxmox hosts (`fashomelab`) with dynamic inventories; Azure (`azhomelab-prod`) integration in progress.
