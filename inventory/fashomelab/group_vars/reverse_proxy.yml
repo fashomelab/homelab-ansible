@@ -1,0 +1,48 @@
+---
+# ===================================================================
+# Ansible variables for hosts in the 'proxy' group
+# ===================================================================
+
+# Variables for the 'certbot' role
+cert_primary_domain: "example.local"
+cert_alt_names:
+  - "*.example.local"
+cert_email: "admin@example.com"
+
+# ===================================================================
+# Centralized Nginx Site Configuration Data
+# This list drives the creation of all reverse proxy config files.
+# ===================================================================
+nginx_sites:
+  - name: backup
+    server_name: "backup.example.local"
+    template: "site.conf.j2"
+    proxy_pass_url: "http://10.0.0.10"
+    is_websocket: true
+
+  - name: grafana
+    server_name: "grafana.example.local"
+    template: "site.conf.j2"
+    proxy_pass_url: "http://10.0.0.11:3000"
+    is_websocket: true
+
+  - name: jellyfin
+    server_name: "jellyfin.example.local"
+    template: "jellyfin.conf.j2"
+    proxy_pass_url: "http://jellyfin:8096"
+    resolver_ip: "10.0.0.12"
+    client_max_body_size: "20M"
+
+  - name: proxmox
+    server_name: "proxmox.example.local"
+    template: "site.conf.j2"
+    proxy_pass_url: "https://10.0.0.13:8006"
+    is_proxmox: true
+
+  - name: vaultwarden
+    server_name: "vaultwarden.example.com"
+    template: "vaultwarden.conf.j2"
+    backend_servers:
+      - "10.0.0.14:30080"
+      - "10.0.0.15:30080"
+      - "10.0.0.16:30080"

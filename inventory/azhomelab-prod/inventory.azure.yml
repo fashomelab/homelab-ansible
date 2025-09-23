@@ -1,0 +1,12 @@
+
+  plugin: azure_rm
+  include_vm_resource_groups:
+    - homelab-prod-rg
+  auth_source: env
+  keyed_groups:
+    - key: tags.environment
+      prefix: env
+      separator: "_"
+  groups:
+    web_servers: "'web' in tags"
+    db_servers: "'database' in tags"
